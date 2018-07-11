@@ -7,6 +7,9 @@ import dialog from '@/components/data/dialog.js'
 import dialog2 from '@/components/data/dialog2.js'
 Vue.use(Vuex)
 export default new Vuex.Store({
+  state: {
+    msg: 'hello vuex2'
+  },
   modules: {
     dialog: dialog,
     dialog2: dialog2
@@ -26,5 +29,8 @@ export default new Vuex.Store({
     reduce: function (context) {
       context.commit('reduce')
     }
+  },
+  getters: {
+    msg2: state => state.msg + '我是getter'
   }
 })
